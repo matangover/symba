@@ -3,6 +3,7 @@ var vrvToolkit = new verovio.toolkit();
 $(function() {
   let searchParams = new URLSearchParams(window.location.search);
   var score = searchParams.get("score");
+  $("#score-name").text(score);
   $("#scan embed").attr("src", "music/" + score + ".pdf");
 
   $.get("music/" + score + ".mei", function(data) {
