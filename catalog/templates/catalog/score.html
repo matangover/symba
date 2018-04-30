@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/score.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="http://www.verovio.org/javascript/latest/verovio-toolkit.js"></script>
+  <script type="text/javascript">
+    var transcriptionUrl = "{{ score.transcription.url }}";
+  </script>
+  <script src="/static/score.js"></script>
+</head>
+<body>
+  <div id="navigation">
+    Score: <span id="score-name">{{ score.name }}</span>. <a href="/">Back to list.</a>
+  </div>
+  <div id="container">
+    <div id="scan">
+      <embed src="{{ score.scan.url }}" type="application/pdf"></embed>
+    </div>
+
+    <div id="transcription">
+    </div>
+  </div>
+</body>
+</html>

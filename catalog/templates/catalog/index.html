@@ -1,0 +1,5 @@
+  <ul>
+  {% for score in scores %}
+      <li><a href="/score/{{ score.id }}/">{{ score.name }}</a></li>
+  {% endfor %}
+  </ul>

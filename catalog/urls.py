@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('score/<int:score_id>/', views.score, name='score'),
 ]
