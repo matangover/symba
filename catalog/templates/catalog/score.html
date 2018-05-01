@@ -19,6 +19,15 @@
 
     <div id="transcription">
     </div>
+
+    <div id="comments">
+      {% for comment in score.comments.all %}
+        <div class="comment">
+          <div class="comment-text">{{ comment.contents }}</div>
+          <div class="comment-author">{{ comment.author }}</div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </body>
 </html>

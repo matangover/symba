@@ -1,5 +1,10 @@
 from django.contrib import admin
 
-from .models import Score
+from .models import Score, Comment
 
-admin.site.register(Score)
+class CommentInline(admin.StackedInline):
+    model = Comment
+
+@admin.register(Score)
+class ScoreAdmin(admin.ModelAdmin):
+    inlines = [CommentInline]
