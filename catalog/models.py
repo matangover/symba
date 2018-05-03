@@ -9,5 +9,6 @@ class Score(models.Model):
 class Comment(models.Model):
     contents = models.TextField()
     author = models.CharField(max_length=255)
+    date = models.DateTimeField(auto_now_add=True)
     score = models.ForeignKey(Score, on_delete=models.CASCADE,
         related_name="comments")

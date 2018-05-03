@@ -21,10 +21,16 @@
     </div>
 
     <div id="comments">
-      {% for comment in score.comments.all %}
+      <form action="/score/{{ score.id }}/" method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="Submit" />
+      </form>
+
+      {% for comment in comments %}
         <div class="comment">
           <div class="comment-text">{{ comment.contents }}</div>
-          <div class="comment-author">{{ comment.author }}</div>
+          <div class="comment-author">{{ comment.author }} ({{ comment.date }})</div>
         </div>
       {% endfor %}
     </div>
