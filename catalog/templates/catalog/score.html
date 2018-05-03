@@ -22,6 +22,7 @@
 
     <div id="comments">
       <form action="/score/{{ score.id }}/" method="post">
+        Add a comment
         {% csrf_token %}
         {{ comment_form.as_p }}
         <input type="submit" value="Submit" />
